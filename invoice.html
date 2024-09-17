@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="invoice.css"> 
+</head>
+<body>
+  <div class="container">
+    <h1>Invoice Generator</h1>
+
+    <div class="invoice-form">
+      <h2>Enter Invoice Details</h2>
+      <label for="clientName">Client Name:</label>
+      <input type="text" id="clientName" placeholder="Client Name">
+      
+      <label for="invoiceNumber">Invoice Number:</label>
+      <input type="text" id="invoiceNumber" placeholder="Invoice Number">
+
+      <label for="date">Date:</label>
+      <input type="date" id="date">
+
+      <table id="items">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" class="item-description" placeholder="Item description"></td>
+            <td><input type="number" class="item-quantity" value="1"></td>
+            <td><input type="number" class="item-price" value="0"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button id="addItem">Add Item</button>
+      <button id="generateInvoice">Generate Invoice</button>
+    </div>
+
+
+    <div class="invoice-preview" id="invoicePreview">
+      <h2>Invoice</h2>
+      <p id="invoiceClientName"></p>
+      <p id="invoiceNumberDisplay"></p>
+      <p id="invoiceDate"></p>
+
+      <table id="invoiceTable">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="invoiceItems"></tbody>
+      </table>
+
+      <h3>Total Amount: $<span id="totalAmount"></span></h3>
+      <button id="printInvoice">Print Invoice</button>
+    </div>
+
+  </div>
+
+  <script src="invoice.js"></script> 
+</body>
+</html>
